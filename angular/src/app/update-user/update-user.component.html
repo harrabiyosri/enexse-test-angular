@@ -1,0 +1,48 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update User </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>userName</label>
+            <input type="text" class="form-control" id="userName" [(ngModel)]="user.userName" name="userName">
+        </div>
+        <div class="form-group">
+            <label>fullName</label>
+            <input type="text" class="form-control" id="fullName" [(ngModel)]="user.fullName" name="fullName">
+        </div>
+        <div class="form-group">
+            <label>gender</label>
+            <input type="text" class="form-control" id="gender" [(ngModel)]="user.gender" name="gender">
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email">
+        </div>
+        <div class="form-group">
+            <label>emailPec</label>
+            <input type="email" class="form-control" id="emailPec" [(ngModel)]="user.emailPec" name="emailPec">
+        </div>
+        <div class="form-group">
+            <label>role</label>
+            <input type="text" class="form-control" id="role" [(ngModel)]="user.role" name="role">
+        </div>
+        <div class="form-group">
+            <label>dateOfBirth</label>
+            <input type="text" class="form-control" id="dateOfBirth" [(ngModel)]="user.dateOfBirth" name="dateOfBirth">
+        </div>
+        <div class="form-group">
+            <label>lastLogin</label>
+            <input type="text" class="form-control" id="lastLogin" [(ngModel)]="user.lastLogin" name="lastLogin">
+        </div>
+        <div class="form-group">
+            <label>createdAt</label>
+            <input type="text" class="form-control" id="createdAt" [(ngModel)]="user.createdAt" name="createdAt">
+        </div>
+        <div class="form-group">
+            <label>active</label>
+            <input type="text" class="form-control" id="active" [(ngModel)]="user.active" name="active">
+        </div>
+
+        <button class="btn btn-success" type="submit">Save User</button>
+    </form>
+</div>

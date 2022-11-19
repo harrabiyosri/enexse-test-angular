@@ -1,0 +1,67 @@
+<h2>Users List</h2>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>UserName</th>
+            <th>FullName</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>DateOfBirth</th>
+            <th>LastLogin</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.userId}}</td>
+            <td>{{user.userName}}</td>
+            <td>{{user.fullName}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.email}}</td>
+            <td *ngFor="let role of user.role">
+                <div class="container">
+                    <div *ngIf="role == 'USER'">
+                        <div class="btn-user">{{role}}</div>
+                    </div>
+                    <div *ngIf="role == 'MODERATOR'">
+                        <div class="btn-moderator">{{role}}</div>
+                    </div>
+                    <div *ngIf="role == 'ADMIN'">
+                        <div class="btn-admin">{{role}}</div>
+                    </div>
+                </div>
+            </td>
+            <td>{{user.dateOfBirth}}</td>
+            <td>{{user.lastLogin}}</td>
+            <td *ngIf="status(user.active)">
+                <button type="button" class="btn btn-success btn-circle btn-xl">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </button>
+
+            </td>
+            <td *ngIf="!(status(user.active))">
+                <button type="button" class="btn btn-danger btn-circle btn-xl">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </td>
+            <td style="margin-left: 20px">
+                <kendo-buttongroup>
+                    <button (click)="updateUser(user.userId)" kendoButton class="btn1"
+                        style="height:25px;width:66px">Update</button>
+                </kendo-buttongroup>
+                <kendo-buttongroup>
+                    <button (click)="deleteUser(user.userId)" kendoButton class="btn2"
+                        style="height:25px;width:66px">Delete</button>
+                </kendo-buttongroup>
+                <kendo-buttongroup>
+                    <button (click)="detailsUser(user.userId)" kendoButton class="btn3"
+                        style="height:25px;width:66px">View</button>
+                </kendo-buttongroup>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

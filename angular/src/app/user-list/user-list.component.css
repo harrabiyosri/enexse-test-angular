@@ -1,0 +1,25 @@
+.btn1 {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.btn2 {
+    background-color: tomato;
+    color: white;
+}
+
+.btn3 {
+    background-color: chartreuse
+}
+
+.btn-user {
+    background-color: #0096c8;
+}
+
+.btn-moderator {
+    background-color: #ffc107;
+}
+
+.btn-admin {
+    background-color: #2a7a39;
+}
